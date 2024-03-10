@@ -1,0 +1,5 @@
+(module
+  (func f0 (param float) (param float) (result float) (entry b0)
+    (block b0 (param _0 float) (param _1 float)
+      (let (var _2 float) (float.sub _0 _1))
+      (return _2))))

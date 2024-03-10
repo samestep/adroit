@@ -1,1 +1,3 @@
+*.vsix
 /target/
+node_modules/

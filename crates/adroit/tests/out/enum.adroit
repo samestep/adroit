@@ -1,0 +1,20 @@
+(module
+  (type t0
+    (enum
+      (variant v0 float)
+      (variant v1 int)))
+  (func f0 (param t0) (result t0) (entry b0)
+    (block b0 (param _0 t0)
+      (match _0
+        (case b1)
+        (case b2)))
+    (block b1 (param _1 float)
+      (let (var _2 float) (float.add _1 _1))
+      (let (var _3 t0) (enum.make t0 v0 _2))
+      (jump b3 _3))
+    (block b2 (param _4 int)
+      (let (var _5 int) (int.add _4 _4))
+      (let (var _6 t0) (enum.make t0 v1 _5))
+      (jump b3 _6))
+    (block b3 (param _7 t0)
+      (return _7))))

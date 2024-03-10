@@ -1,0 +1,11 @@
+(module
+  (type pair (struct (field a int) (field b float)))
+  (func make (param int) (param float) (result int) (entry body)
+    (block body (param x int) (param y float)
+      (let p (struct.make pair x y))
+      (return p)))
+  (func unmake (param pair) (result int) (result float) (entry body)
+    (block body (param p pair)
+      (let x (struct.get pair a p))
+      (let y (struct.get pair b p))
+      (return x y))))

@@ -1,0 +1,5 @@
+(module
+  (func sub (param float) (param float) (result float) (entry body)
+    (block body (param x float) (param y float)
+      (let z (float.sub x y))
+      (return z))))

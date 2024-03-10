@@ -1,0 +1,62 @@
+{
+  "name": "Adroit",
+  "scopeName": "source.adroit",
+  "fileTypes": [".adroit"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#atoms"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.semicolon.adroit",
+          "match": ";.*$"
+        }
+      ]
+    },
+    "atoms": {
+      "patterns": [
+        {
+          "name": "entity.name.function.adroit",
+          "match": "\\b\\w+(\\.\\w+)+\\b"
+        },
+        {
+          "name": "keyword.other.adroit",
+          "match": "\\b(array|enum|field|func|let|module|param|result|struct|type|var|variant)\\b"
+        },
+        {
+          "name": "keyword.control.adroit",
+          "match": "\\b(block|call|case|else|entry|if|jump|match|return|then)\\b"
+        },
+        {
+          "name": "support.type.primitive.adroit",
+          "match": "\\b(bool|int|float)\\b"
+        },
+        {
+          "name": "constant.numeric.adroit",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        {
+          "name": "variable.other.adroit",
+          "match": "\\b\\w+\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.adroit",
+          "match": "[()]"
+        }
+      ]
+    }
+  }
+}

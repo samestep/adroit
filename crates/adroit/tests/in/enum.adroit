@@ -1,0 +1,20 @@
+(module
+  (type t
+    (enum
+      (variant f float)
+      (variant i int)))
+  (func double (param t) (result t) (entry pre)
+    (block pre (param v t)
+      (match v
+        (case left)
+        (case right)))
+    (block left (param x float)
+      (let x2 (float.add x x))
+      (let uf (enum.make t f x2))
+      (jump post uf))
+    (block right (param n int)
+      (let n2 (int.add n n))
+      (let ui (enum.make t i n2))
+      (jump post ui))
+    (block post (param u t)
+      (return u))))

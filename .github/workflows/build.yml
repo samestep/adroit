@@ -1,0 +1,26 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  rust:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo test
+      - run: cargo run crates/adroit/tests/in/empty.adroit
+
+  vscode:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - run: bun run check
+      - run: bun run --cwd=packages/vscode build
+      - uses: actions/upload-artifact@v4
+        with:
+          path: packages/vscode/*.vsix

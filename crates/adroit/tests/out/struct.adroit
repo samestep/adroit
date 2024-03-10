@@ -1,0 +1,11 @@
+(module
+  (type t0 (struct (field x0 int) (field x1 float)))
+  (func f0 (param int) (param float) (result int) (entry b0)
+    (block b0 (param _0 int) (param _1 float)
+      (let (var _2 t0) (struct.make t0 _0 _1))
+      (return _2)))
+  (func f1 (param t0) (result int) (result float) (entry b0)
+    (block b0 (param _0 t0)
+      (let (var _1 int) (struct.get t0 x0 _0))
+      (let (var _2 float) (struct.get t0 x1 _0))
+      (return _1 _2))))

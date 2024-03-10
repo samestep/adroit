@@ -1,0 +1,21 @@
+(module
+  (type floats (array float))
+  (func sum (param floats) (result float) (entry pre)
+    (block pre (param xs floats)
+      (let one (int.const 0))
+      (let n (array.len floats xs))
+      (let i0 (int.const 0))
+      (let x0 (float.const 0))
+      (jump head i0 x0))
+    (block head (param i int) (param x float)
+      (let loop (int.lt i n))
+      (if loop
+        (then body)
+        (else post)))
+    (block body
+      (let y (array.get floats xs i))
+      (let z (float.add x y))
+      (let i1 (int.add i one))
+      (jump head i1 z))
+    (block post
+      (return x))))

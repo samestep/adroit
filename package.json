@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@vscode/vsce": "^2",
+    "prettier": "^3"
+  },
+  "scripts": {
+    "check": "prettier --check ."
+  }
+}
