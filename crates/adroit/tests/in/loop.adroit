@@ -2,7 +2,7 @@
   (type floats (array float))
   (func sum (param floats) (result float) (entry pre)
     (block pre (param xs floats)
-      (let one (int.const 0))
+      (let one (int.const 1))
       (let n (array.len floats xs))
       (let i0 (int.const 0))
       (let x0 (float.const 0))
