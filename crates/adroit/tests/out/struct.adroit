@@ -1,6 +1,6 @@
 (module
   (type t0 (struct (field x0 int) (field x1 float)))
-  (func f0 (param int) (param float) (result int) (entry b0)
+  (func f0 (param int) (param float) (result t0) (entry b0)
     (block b0 (param _0 int) (param _1 float)
       (let (var _2 t0) (struct.make t0 _0 _1))
       (return _2)))

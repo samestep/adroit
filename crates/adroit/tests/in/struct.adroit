@@ -1,6 +1,6 @@
 (module
   (type pair (struct (field a int) (field b float)))
-  (func make (param int) (param float) (result int) (entry body)
+  (func make (param int) (param float) (result pair) (entry body)
     (block body (param x int) (param y float)
       (let p (struct.make pair x y))
       (return p)))

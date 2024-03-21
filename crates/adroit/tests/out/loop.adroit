@@ -2,7 +2,7 @@
   (type t0 (array float))
   (func f0 (param t0) (result float) (entry b0)
     (block b0 (param _0 t0)
-      (let (var _1 int) (int.const 0))
+      (let (var _1 int) (int.const 1))
       (let (var _2 int) (array.len t0 _0))
       (let (var _3 int) (int.const 0))
       (let (var _4 float) (float.const 0))
