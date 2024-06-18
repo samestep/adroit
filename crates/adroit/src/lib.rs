@@ -1,3 +1,4 @@
+mod ad;
 mod parse;
 mod pprint;
 
@@ -31,6 +32,20 @@ pub enum Type {
 pub struct Module {
     pub types: Vec<Typedef>,
     pub funcs: Vec<Function>,
+}
+
+impl Module {
+    pub fn new_type(&mut self, def: Typedef) -> TypeId {
+        let id = TypeId(self.types.len());
+        self.types.push(def);
+        id
+    }
+
+    pub fn new_func(&mut self, func: Function) -> FuncId {
+        let id = FuncId(self.funcs.len());
+        self.funcs.push(func);
+        id
+    }
 }
 
 #[derive(Clone, Debug)]
@@ -158,4 +173,5 @@ pub enum Exit {
     },
 }
 
+pub use ad::ad;
 pub use parse::ParseError;
